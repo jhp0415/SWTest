@@ -10,12 +10,12 @@ int n = 3, m = 7;
 int a[30];
 bool check[30];
 
-void dfs(int cnt)
+void combination(int cnt)
 {
-    //Á¶ÇÕ
+    //ì¡°í•©
     if (cnt == n)
     {
-        //Ãâ·ÂÇØº¸±â
+        //ì¶œë ¥í•´ë³´ê¸°
         for (int i = 0; i < n; i++)
             cout << a[i] << " ";
         cout << endl;
@@ -30,7 +30,7 @@ void dfs(int cnt)
             a[cnt] = i;
             check[i] = true;
 
-            dfs(cnt + 1);
+            combination(cnt + 1);
 
             check[i] = false;
         }
@@ -38,12 +38,12 @@ void dfs(int cnt)
 }
 
 
-void dfs2(int cnt)
+void permutation(int cnt)
 {
-    //¼ø¿­
+    //ìˆœì—´
     if (cnt == n)
     {
-        //Ãâ·ÂÇØº¸±â
+        //ì¶œë ¥í•´ë³´ê¸°
         for (int i = 0; i < n; i++)
             cout << a[i] << " ";
         cout << endl;
@@ -58,7 +58,7 @@ void dfs2(int cnt)
             a[cnt] = i;
             check[i] = true;
 
-            dfs(cnt + 1);
+            permutation(cnt + 1);
 
             check[i] = false;
         }
@@ -69,8 +69,8 @@ void dfs2(int cnt)
 
 int main()
 {
-    //dfs(0);
-    dfs2(0);
+    combination(0);
+    permutation(0);
 
 
 
